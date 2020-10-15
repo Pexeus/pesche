@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(248, 248, 248);
+    font-family: monospace;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.658);
+}
+
+.title {
+    margin: 50px;
+    font-weight: bold;
+}
+
+.backup {
+    width: calc(100% - 100px);
+    margin-left: 50px;
+    padding: 10px;
+    box-shadow: 0px 0px 3px gray;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 15px;
+    background-color: white;
+}
+
+.backup * {
+    align-self: center;
+}
+
+.backup .start {
+    display: flex;
+}
+
+.backup .start * {
+    display: inline-block;
+    align-self: center;
+    margin-right: 20px;
+}
+
+.backup img {
+    height: 30px;
+}
+
+#backupSelection input {
+    border: 0;
+    background-color: #2980b9;
+    padding: 10px;
+    padding-right: 15px;
+	padding-left: 15px;
+	margin-right: 5px;
+    margin-left: 5px;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px gray;
+    cursor: pointer;
+	transition: all ease-in-out .3s;
+	opacity: .8;
+	font-weight: bold;
+}
+
+input:hover {
+    opacity: 1;
+}
+
+#uploadForm {
+    padding: 30px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px gray;
+    display: inline-block;
+    margin: 100px;
+    text-align: left;
+}
+
+#uploadForm h1 {
+    margin-bottom: 30px;
+}
+
+#uploadForm #submitUpload {
+    border: 0;
+    background-color: #2980b9;
+    padding: 10px;
+    padding-right: 15px;
+	padding-left: 15px;
+	margin-right: 5px;
+    margin-left: 5px;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px gray;
+    cursor: pointer;
+	transition: all ease-in-out .3s;
+	opacity: .8;
+	font-weight: bold;
+}
