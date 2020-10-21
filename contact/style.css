@@ -1,0 +1,73 @@
+body {
+    background-color: #30414e;
+}
+
+* {
+    font-family: Arial;
+    transition: all ease-in-out .3s;
+}
+
+#formBox {
+    background-color: white;
+    padding: 50px;
+    display: inline-block;
+    box-shadow: 0px 0px 80px #0d1216;
+    border-radius: 10px;
+    text-align: left;
+    min-width: 50%;
+    margin-top: 50px;
+}
+
+@media only screen and (min-height: 800px) {
+    #formBox {
+        margin-top: 20vh;
+    }
+}
+
+#formBox h1 {
+    margin-bottom: 50px;
+    color: #30414e;
+}
+
+#formBox input {
+    font-size: large;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 0;
+    box-shadow: 0px 0px 3px gray;
+    border-radius: 3px;
+}
+
+#formBox input:focus {
+    box-shadow: 0px 0px 6px #496377;
+}
+
+#formBox textarea:focus {
+    box-shadow: 0px 0px 6px #496377;
+}
+
+#formBox textarea {
+    font-size: large;
+    padding: 5px;
+    border: 0;
+    box-shadow: 0px 0px 3px gray;
+    resize: none;
+    width: calc(100% - 10px);
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+#formBox #formBtn {
+    float: right;
+    padding: 10px;
+    margin-left: 20px;
+    cursor: pointer;
+    background-color: #30414e;
+    color: rgba(255, 255, 255, 0.795);
+    box-shadow: 0px 0px 3px gray;
+}
+
+#formBox #formBtn:hover {
+    transform: scale(1.05);
+    color: white;
+}

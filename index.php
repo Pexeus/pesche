@@ -26,7 +26,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="Expires" content="-1">
-    <title>Document</title>
+    <title>Peter Zaugg</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -63,6 +63,13 @@
         </div>
         </div>
     </div>
+
+    <a href="./contact/">
+        <div class="linkContact">
+            <img src="./img/letter.png" alt="">
+            <p>Kontaktieren Sie mich!</p>
+        </div>
+    </a>
 
     <div class="linkTR">
         <a href="backend"><img src="./img/user.png" alt=""></a>
