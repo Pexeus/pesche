@@ -1,7 +1,4 @@
 <?php
-
-//var_dump($_POST);
-
 $name = $_POST["name"];
 $email = $_POST["email"];
 $subject = $_POST["subject"];
@@ -16,5 +13,7 @@ $header = array(
 $message = $message_raw . "\n\n" . "Absender: " . $name . "\n\n" . "E-Mal des Absenders: " . $email;
 
 
-mail("info@peterzaugg.ch", $subject, $message, $header);
+mail("liam@peterzaugg.ch", $subject, $message, $header);
+
+echo "<script>location.href = \"../index.php\"</script>";
 ?>
