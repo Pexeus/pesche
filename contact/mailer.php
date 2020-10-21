@@ -13,7 +13,7 @@ $header = array(
 $message = $message_raw . "\n\n" . "Absender: " . $name . "\n\n" . "E-Mal des Absenders: " . $email;
 
 
-mail("liam@peterzaugg.ch", $subject, $message, $header);
+mail("info@peterzaugg.ch", $subject, $message, $header);
 
 echo "<script>location.href = \"../index.php\"</script>";
 ?>
