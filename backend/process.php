@@ -26,6 +26,9 @@
                 if ($_POST["command"] == "backups") {
                     echo "<script>location.href = \"./backups\"</script>";
                 }
+                if ($_POST["command"] == "videos") {
+                    echo "<script>location.href = \"./videos\"</script>";
+                }
             }
 
 
