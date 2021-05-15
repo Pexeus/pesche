@@ -358,7 +358,7 @@ img {
 	transition: all .36s ease-in-out;
 }
 
-.linkContact {
+.linkContact { 
 	height: 50px;
 	display: inline-block;
 	opacity: .6;

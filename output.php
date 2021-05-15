@@ -107,6 +107,8 @@
     }
 
     function insertImage($root, $src, $type) {
+        $timestamp = time();
+
         $contents = scandir($root . $src);
         $path = $root . $src;
 
@@ -125,7 +127,7 @@
                 <div id=$type>
                     <form action=maxRes.php target=_blank method=post class=openImageForm>
                         <input type=hidden value=$path name=imagePath>
-                        <img src=\"$path$content\" alt=\"\">
+                        <img src=\"$path$content?$timestamp\" alt=\"\">
                         <h1>$title</h1>
                     </form>
                 </div>
