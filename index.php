@@ -53,6 +53,7 @@
                 </div>
                 <?php
                     require("output.php");
+                    require("videos.php");
                 ?>
             </div>
 
@@ -81,5 +82,6 @@
 
     <script src="UI.js"></script>
     <script src="book.js"></script>
+    <script src="videos.js"></script>
 </body>
 </html>

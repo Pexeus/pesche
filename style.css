@@ -207,6 +207,18 @@ body {
 	vertical-align: top;
 }
 
+.video {
+	width: calc(100% - 40px);
+	margin: 20px;
+	position: relative;
+}
+
+.video video {
+	width: 100%;
+	box-shadow: 2px 2px 6px gray;
+	cursor: pointer;
+}
+
 #bookmarks {
 	position: absolute;
 	top: 0;
