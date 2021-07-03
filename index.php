@@ -66,6 +66,8 @@
     </div>
 
 
-    <script src="script.js"></script>
+    <script src="UI.js"></script>
+    <script src="book.js"></script>
+    <script src="videos.js"></script>
 </body>
 </html>
