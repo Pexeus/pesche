@@ -21,8 +21,8 @@ if (strpos($ru, 'tools.php') !== false) {
 
 <?php
     function insertTools() {
-        $commands = ["rebuild", "new", "archive", "backups", "home", "videos"];
-        $text = ["Rebuild", "Hochladen", "Archiv", "Backups", "Startseite", "Videos"];
+        $commands = ["rebuild", "new", "archive", "backups", "home", "videos", "scan"];
+        $text = ["Rebuild", "Hochladen", "Archiv", "Backups", "Startseite", "Videos", "Rohdaten"];
 
         for ($i = 0; $i < count($commands); $i++) {
             tool($commands[$i], $text[$i]);

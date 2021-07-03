@@ -9,11 +9,9 @@
                     fullRebuild();
 					echo "<script>location.href = \"./index.php\"</script>";
                 }
-
                 if ($_POST["command"] == "new") {
                     echo "<script>location.href = \"./new/\"</script>";
                 }
-
                 if ($_POST["command"] == "home") {
                     echo "<script>location.href = \"../\"</script>";
                 }
@@ -28,6 +26,9 @@
                 }
                 if ($_POST["command"] == "videos") {
                     echo "<script>location.href = \"./videos\"</script>";
+                }
+                if ($_POST["command"] == "scan") {
+                    echo "<script>location.href = \"./scanner\"</script>";
                 }
             }
 

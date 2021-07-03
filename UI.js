@@ -5,6 +5,8 @@ window.onload = function () {
         addImageListeners()
     }, 100)
 
+    console.info("https://github.com/Pexeus")
+
     initBook()
 }
 

@@ -5,20 +5,6 @@
     }
 </script>
 
-<?php
-    if(isset($_GET['id'])) {
-        
-    }
-    else {
-        $id = rand();
-        echo "
-        <script>
-            document.location = \"./?id=$id\"
-        </script>
-        ";
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,8 +66,6 @@
     </div>
 
 
-    <script src="UI.js"></script>
-    <script src="book.js"></script>
-    <script src="videos.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

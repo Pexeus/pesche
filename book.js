@@ -359,9 +359,6 @@ function navigatorRight(site, index) {
 
 function addImageListeners() {
     forms = document.getElementsByClassName("openImageForm")
-
-    console.log(forms[0].className)
-
     for (i = 0; i < forms.length; i++) {
         forms[i].addEventListener("click", function () {
 
