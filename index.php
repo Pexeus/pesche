@@ -20,8 +20,11 @@
         <h1>Bleistiftzeichnungen von Peter Zaugg</h1>
         <img src="./img/loading.svg">
     </div>
-    </div>
     <div id="books">
+    <div id="portrait">
+        <img src="./img/portrait.jpg" alt="">
+    </div>
+
         <div id="book">
             <div id="cover">
                 <h1>Willkommen</h1>
@@ -47,17 +50,27 @@
             <div id="bookmarks">
 
             </div>
+			<!--
+			<div class="tutorial">
+				<div class="left">
+					<h2>Hier klicken um zurück zu blättern</h2>
+				</div>
+				<div class="right">
+					<h2>Hier klicken um weiter zu blättern</h2>
+				</div>
+				<div class="image"></div>
+			</div>
+			-->
         </div>
         </div>
     </div>
-
     <a href="./contact/">
         <div class="linkContact">
             <img src="./img/letter.png" alt="">
             <p>Kontaktieren Sie mich!</p>
         </div>
     </a>
-
+	
     <div class="linkTR">
         <a href="backend"><img src="./img/user.png" alt=""></a>
     </div>

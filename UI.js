@@ -3,11 +3,16 @@ window.onload = function () {
         insertPageNavigors()
         fadeOutEffect()
         addImageListeners()
+		siteTutorial()
     }, 100)
 
     console.info("https://github.com/Pexeus")
 
     initBook()
+}
+
+function siteTutorial() {
+	
 }
 
 function scrollTo(element) {

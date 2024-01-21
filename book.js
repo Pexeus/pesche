@@ -36,7 +36,7 @@ function closeBook() {
 
     //closing bookmarks
     document.getElementById("bookmarks").style.right = "-15px"
-    
+
     //close pages
     closePages()
 
@@ -115,7 +115,7 @@ function getCurrentPage() {
 
 function openPage(page) {
     page.style.display = "inline-block"
-    
+
     const left = page.children[0]
     const right = page.children[1]
     setTimeout(() => {
@@ -125,8 +125,10 @@ function openPage(page) {
     }, 400);
 }
 
-function nextPage() {
-    page = event.target.parentElement.parentElement.parentElement
+function nextPage(page) {
+    if (page == undefined) {
+        page = event.target.parentElement.parentElement.parentElement
+    }
 
     currentPageIndex = getPageIndex(page)
 
@@ -135,8 +137,10 @@ function nextPage() {
     }
 }
 
-function previousPage() {
-    page = event.target.parentElement.parentElement.parentElement
+function previousPage(page) {
+    if (page == undefined) {
+        page = event.target.parentElement.parentElement.parentElement
+    }
 
     currentPageIndex = getPageIndex(page)
 
@@ -169,7 +173,7 @@ function getPages() {
     const content = document.getElementById("content")
     const categories = content.children
 
-    for(i = 0; i < categories.length; i++) {
+    for (i = 0; i < categories.length; i++) {
         let catContents = categories[i].children
 
         for (l = 0; l < catContents.length; l++) {
@@ -181,7 +185,7 @@ function getPages() {
 }
 
 function getCategories() {
-    categories =  []
+    categories = []
 
     const content = document.getElementById("content")
     const categorieNodes = content.children
@@ -196,13 +200,15 @@ function getCategories() {
 function switchCategory(category) {
     const currentCategory = getCurrentPage().parentElement.id
 
-    console.log(category)
-    console.log(currentCategory)
-
     if (category != currentCategory) {
-        const page = document.getElementById(category).children[0]
+        const categoryElement = document.getElementById(category)
+        console.log(category);
 
-        goToPage(page)
+        if (categoryElement != null) {
+            const page = categoryElement.children[0]
+
+            goToPage(page)
+        }
     }
     else {
         console.log("cant switch to current")
@@ -215,13 +221,13 @@ function initBook() {
     const background = document.getElementById("books")
 
     //ein/aus der maus
-    book.addEventListener("click", function() {
+    book.addEventListener("click", function () {
         if (document.getElementById("book") != null) {
             setBookEventCooldown(1200)
             openBook()
         }
     })
-    background.addEventListener("click", function() {
+    background.addEventListener("click", function () {
         if (document.getElementById("bookOpen") != null && bookEventCooldown == false && event.target.id == "books") {
             setBookEventCooldown(1200)
             closeBook()
@@ -229,6 +235,7 @@ function initBook() {
     })
 
     insertBookmarks()
+    insertPortrait()
 }
 
 function setBookEventCooldown(cooldown) {
@@ -246,7 +253,7 @@ function insertBookmarks() {
     const container = document.getElementById("bookmarks")
 
     const categories = getCategories()
-    const colors = ["#f6e58d", "#eb4d4b", "#6ab04c", "#0abde3", "#5f27cd", "#ff9f43"]
+    const colors = ["#f6e58d", "#eb4d4b", "#6ab04c", "#0abde3", "#5f27cd", "#ff9f43", "#3498db"]
 
     for (i = 0; i < categories.length; i++) {
         if (categories[i] != "bookInside") {
@@ -255,6 +262,31 @@ function insertBookmarks() {
             container.appendChild(bookmark)
         }
     }
+
+    //Portrait: Insert portrait (i ha grad ke bokc ds mit php z mache, git e JS murx sry)
+    const portraitBookmark = createBookmark("Portrait", colors[0])
+    portraitBookmark.addEventListener("click", displayPortrait)
+    container.appendChild(portraitBookmark)
+}
+
+function insertPortrait() {
+    const portrait = document.querySelector("#portrait")
+
+    portrait.addEventListener("click", (e) => {
+        if (e.target == portrait) {
+            portrait.style.visibility = "hidden"
+            portrait.style.opacity = 0
+            portrait.style.transform = 'scale(1.3)'
+        }
+    })
+}
+
+function displayPortrait() {
+    const portrait = document.querySelector("#portrait")
+
+    portrait.style.visibility = "visible"
+    portrait.style.opacity = 1
+    portrait.style.transform = 'scale(1)'
 }
 
 function createSectionNew() {
@@ -290,8 +322,8 @@ function createBookmark(cat, color) {
 
     bookmark.appendChild(bookmarkText)
 
-    bookmark.addEventListener("click", function() {
-        if(event.target.tagName == "DIV") {
+    bookmark.addEventListener("click", function () {
+        if (event.target.tagName == "DIV") {
             switchCategory(event.target.children[0].innerHTML)
         }
         else {
@@ -356,18 +388,38 @@ function navigatorRight(site, index) {
     site.appendChild(navigator)
 }
 
+function addPageListeners() {
+    for (const page of document.querySelectorAll("#page")) {
+        page.children[1].addEventListener("click", (e) => {
+            if (e.target.tagName == "IMG" || e.target.tagName == "VIDEO") {
+                return
+            }
+            nextPage(page)
+        })
+        page.children[0].addEventListener("click", (e) => {
+            if (e.target.tagName == "IMG" || e.target.tagName == "VIDEO") {
+                return
+            }
+            previousPage(page)
+        })
+    }
+}
 
 function addImageListeners() {
     forms = document.getElementsByClassName("openImageForm")
     for (i = 0; i < forms.length; i++) {
         forms[i].addEventListener("click", function () {
-
             form = event.target.parentElement
 
-            console.log(form)
-
-            form.submit()
+            try {
+                form.submit()
+            }
+            catch (e) {
+                console.log("no image to open!")
+            }
         })
     }
+
+    addPageListeners()
 }
 

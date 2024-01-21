@@ -14,7 +14,7 @@ if(isset($_POST["signin-submit"])){
 		$conf_user_json_raw = get_user();
         $json = json_decode($conf_user_json_raw);
         if($_POST["uid"] == $json->name){
-            if(password_verify($_POST["pwd"],$json->pwd)){
+            if(password_verify($_POST["pwd"],$json->pwd) ){
                 session_start();
                 $_SESSION["uid"] = $json->uid;
                 header("Location: ../../backend/index.php?signin=success");

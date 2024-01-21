@@ -48,7 +48,7 @@ function vGen($root, $id) {
 
         $html = "
         <div class=video>
-            <video src=\"$vSource\" onclick=\"playVideo()\"></video>
+            <video controls src=\"$vSource\" onclick=\"playVideo()\"></video>
             <h1>$title</h1>
         </div>";
 
