@@ -18,7 +18,15 @@
 <body>
     <div id="welcome">
         <h1>Bleistiftzeichnungen von Peter Zaugg</h1>
-        <img src="./img/loading.svg">
+        <div id="progressWrap">
+            <div id="progressMeta">
+                <span id="progressStatus">Lade Bilder...</span>
+                <span id="progressText">0%</span>
+            </div>
+            <div id="progress">
+                <div id="progressBar"></div>
+            </div>
+        </div>
     </div>
     <div id="books">
     <div id="portrait">

@@ -1,7 +1,7 @@
 * {
 	margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
+	padding: 0;
+	scroll-behavior: smooth;
 }
 
 body {
@@ -15,29 +15,66 @@ body {
 }
 
 #welcome {
-    position: fixed;
-    display: block;
-    width: 100%;
-    height: 100vh;
-    background-color: white;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    opacity: 1;
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100vh;
+	background-color: #ffffff;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	opacity: 1;
+	color: #30414e;
 }
 
 #welcome h1 {
-	font-size: 20pt;
-	line-height: 80vh;
+	font-size: 22pt;
+	font-weight: normal;
+	letter-spacing: 3px;
+	color: #30414e;
 }
 
-#welcome img {
-	position: absolute;
-	left: calc(50% - 20px);
-	top: 50vh;
-	z-index: 100;
-	width: 40px;
-	height: 40px;
+#progressWrap {
+	width: 320px;
+	margin-top: 56px;
+	text-align: center;
+}
+
+#progressMeta {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	width: 100%;
+	margin-bottom: 10px;
+	font-size: 11pt;
+	letter-spacing: 1px;
+}
+
+#progressStatus {
+	opacity: .55;
+}
+
+#progressText {
+	opacity: .85;
+}
+
+#progress {
+	width: 100%;
+	height: 6px;
+	background-color: #e0e0e0;
+	border-radius: 3px;
+	overflow: hidden;
+}
+
+#progressBar {
+	width: 0%;
+	height: 100%;
+	background-color: #30414e;
+	border-radius: 3px;
+	transition: width .2s ease-out;
 }
 
 #shield {
@@ -115,7 +152,7 @@ body {
 	margin-top: 10px;
 	padding: 0;
 	margin-left: calc(50% - 200px);
-	
+
 	display: inline-block;
 	position: relative;
 	box-shadow: 14px 14px 79px rgb(124, 124, 124);
@@ -168,7 +205,8 @@ body {
 	transition: all .7s ease-in-out;
 }
 
-#navPage h1, p {
+#navPage h1,
+p {
 	margin-top: 20px;
 }
 
@@ -370,7 +408,7 @@ img {
 	transition: all .36s ease-in-out;
 }
 
-.linkContact { 
+.linkContact {
 	height: 50px;
 	display: inline-block;
 	opacity: .6;
@@ -417,26 +455,27 @@ img {
 	margin-left: calc(-100% + 10px);
 	z-index: 100;
 	position: relative;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-around;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-around;
 }
 
-.tutorial .left, .right {
-    width: calc(50% - 20px);
-    height: calc(100% - 60px);
-    margin: 25px;
-    border-radius: 30px;
+.tutorial .left,
+.right {
+	width: calc(50% - 20px);
+	height: calc(100% - 60px);
+	margin: 25px;
+	border-radius: 30px;
 	box-shadow: 0px 0px 1000px rgb(49, 49, 49);
 	display: flex;
-    align-items: center;
-    justify-content: center;
+	align-items: center;
+	justify-content: center;
 }
 
 .tutorial h2 {
 	color: rgb(49, 49, 49);
-    background: white;
-    border-radius: 5px;
+	background: white;
+	border-radius: 5px;
 	padding: 5px;
 	padding-left: 15px;
 	padding-right: 15px;
@@ -444,7 +483,7 @@ img {
 }
 
 .tutorial .image {
-    position: absolute;
+	position: absolute;
 }
 
 #portrait {

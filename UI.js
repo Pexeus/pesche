@@ -1,7 +1,13 @@
+var progressDone = false
+
+document.addEventListener("DOMContentLoaded", function () {
+    initProgress()
+})
+
 window.onload = function () {
     setTimeout(function() {
         insertPageNavigors()
-        fadeOutEffect()
+        finishProgress()
         addImageListeners()
 		siteTutorial()
     }, 100)
@@ -9,6 +15,82 @@ window.onload = function () {
     console.info("https://github.com/Pexeus")
 
     initBook()
+}
+
+function initProgress() {
+    const bar = document.getElementById("progressBar")
+    if (!bar) {
+        return
+    }
+
+    const text = document.getElementById("progressText")
+
+    const images = Array.from(document.images)
+    const videos = Array.from(document.querySelectorAll("video"))
+    const assets = images.concat(videos)
+    const total = assets.length
+
+    if (total === 0) {
+        finishProgress()
+        return
+    }
+
+    let loaded = 0
+
+    const update = () => {
+        const pct = Math.round((loaded / total) * 100)
+        bar.style.width = pct + "%"
+        if (text) {
+            text.innerHTML = loaded + " / " + total
+        }
+    }
+
+    const onLoad = () => {
+        loaded++
+        update()
+        if (loaded >= total) {
+            finishProgress()
+        }
+    }
+
+    update()
+
+    assets.forEach(asset => {
+        if (asset.tagName === "IMG") {
+            if (asset.complete) {
+                onLoad()
+            } else {
+                asset.addEventListener("load", onLoad, { once: true })
+                asset.addEventListener("error", onLoad, { once: true })
+            }
+        } else {
+            if (asset.readyState >= 1) {
+                onLoad()
+            } else {
+                asset.addEventListener("loadedmetadata", onLoad, { once: true })
+                asset.addEventListener("error", onLoad, { once: true })
+            }
+        }
+    })
+}
+
+function finishProgress() {
+    if (progressDone) {
+        return
+    }
+    progressDone = true
+
+    const bar = document.getElementById("progressBar")
+    if (bar) {
+        bar.style.width = "100%"
+    }
+
+    const text = document.getElementById("progressText")
+    if (text) {
+        text.innerHTML = "100%"
+    }
+
+    fadeOutEffect()
 }
 
 function siteTutorial() {
